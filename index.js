@@ -1,21 +1,18 @@
 import { Markup, Telegraf } from 'telegraf'
 import { message } from 'telegraf/filters'
-
-import dotenv from 'dotenv'
 import { randomId, text } from './data.js'
 
 
 const bot = new Telegraf('6627513927:AAHiKS6uZJUzLnrpaHVSOcXGG4kQHN67sn0')
 
-bot.help((ctx) => ctx.reply(`Привет, @${ctx.from.username} ! Будем крутить?`))
+bot.help((ctx) => console.log(ctx.from.username))
+
+
 
 bot.start((ctx) => ctx.reply(text.help))
-// событие Стикер, Фото
-bot.on(message('sticker'), (ctx) => ctx.reply('Лее ты нефор'))
-bot.on(message('photo'), (ctx) => ctx.reply('Я также в фото на паспорт выгляжу🤭'))
-//Просто хуй
-bot.hears('хуй', (ctx) => ctx.reply(`Привет @${ctx.message.from.username} от хуя!`))
-//Dick
+// // событие Стикер, Фото
+
+
 bot.command(('dick_size'), (ctx) => ctx.reply(`Твой размер - ${Math.floor(Math.random() * 25)} см🍆😏`))
 
 bot.command('blade', (ctx) => {
@@ -64,6 +61,7 @@ bot.command('gacha', async (ctx) => {
         console.log(e)
     }
 })
+
 
 bot.launch()
 
