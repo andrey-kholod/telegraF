@@ -1,5 +1,4 @@
 import { Markup, Telegraf } from 'telegraf'
-import { message } from 'telegraf/filters'
 import { randomId, text } from './data.js'
 
 
