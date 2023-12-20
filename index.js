@@ -3,10 +3,9 @@ import { message } from 'telegraf/filters'
 
 import dotenv from 'dotenv'
 import { randomId, text } from './data.js'
-dotenv.config()
 
 
-const bot = new Telegraf(process.env.BOT_TOKEN)
+const bot = new Telegraf('6627513927:AAHiKS6uZJUzLnrpaHVSOcXGG4kQHN67sn0')
 
 bot.help((ctx) => ctx.reply(`Привет, @${ctx.from.username} ! Будем крутить?`))
 
